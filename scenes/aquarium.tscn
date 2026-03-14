@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dm4ooagv0m6rt"]
+
+[ext_resource type="Texture2D" uid="uid://bfmgwtt0jhcst" path="res://assets/temp_background.jpeg" id="1_u42aw"]
+[ext_resource type="Texture2D" uid="uid://c4nov873cobo6" path="res://assets/pixel ocean/fundo do mar back.png" id="2_d0q3v"]
+
+[node name="Aquarium" type="Node2D" unique_id=959143749]
+
+[node name="Background" type="TextureRect" parent="." unique_id=749671219]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_u42aw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=615430247]
+position = Vector2(640, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("2_d0q3v")
