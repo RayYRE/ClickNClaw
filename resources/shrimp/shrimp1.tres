@@ -7,8 +7,8 @@
 script = ExtResource("1_iop1m")
 shrimpID = "1"
 texture = ExtResource("2_34gf2")
-oxygen = 3
+oxygen = -3
 waste = 2
-foodmin = 3
-foodmax = 7
+foodmin = -3
+foodmax = -7
 metadata/_custom_type_script = "uid://177nfp36qqss"

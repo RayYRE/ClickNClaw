@@ -2,14 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dm4ooagv0m6rt" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bfmgwtt0jhcst" path="res://assets/temp_background.jpeg" id="1_p57ef"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://biuvn2mfdn21m" path="res://scenes/fish.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dxmyvuvblfuck" path="res://scenes/shrimp.tscn" id="3_iywne"]
-[ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_p57ef"]
 [ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="5_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://5pcgcschsra1" path="res://scenes/plant.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" path="res://scenes/plant.tscn" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
 
 [node name="Game" type="Node2D" unique_id=2143538859]
+script = ExtResource("1_u5sy4")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1045839589]
 offset_right = 1280.0
@@ -19,14 +20,21 @@ texture = ExtResource("1_p57ef")
 [node name="Aquarium" parent="." unique_id=959143749 instance=ExtResource("1_lnu2h")]
 position = Vector2(464, 360)
 
+[node name="Plant" parent="." unique_id=531497883 instance=ExtResource("7_gee14")]
+position = Vector2(556, 512)
+stats = ExtResource("8_gee14")
+
 [node name="Fish" parent="." unique_id=181024416 instance=ExtResource("2_lbhrr")]
 position = Vector2(732, 316)
-stats = ExtResource("3_p57ef")
 
 [node name="Shrimp" parent="." unique_id=1148721874 instance=ExtResource("3_iywne")]
 position = Vector2(442, 357)
 stats = ExtResource("5_u5sy4")
 
-[node name="Plant" parent="." unique_id=531497883 instance=ExtResource("7_gee14")]
-position = Vector2(556, 512)
-stats = ExtResource("8_gee14")
+[node name="Period" type="Timer" parent="." unique_id=392397276]
+unique_name_in_owner = true
+wait_time = 2.0
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Period" to="." method="_on_period_timeout"]

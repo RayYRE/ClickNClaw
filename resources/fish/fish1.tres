@@ -7,8 +7,8 @@
 script = ExtResource("1_wm0kw")
 fishID = "1"
 texture = ExtResource("2_8ksms")
-oxygen = 10
+oxygen = -10
 waste = 10
-foodmin = 7
-foodmax = 10
+foodmin = -7
+foodmax = -10
 metadata/_custom_type_script = "uid://b8dfjglmxh7w3"
