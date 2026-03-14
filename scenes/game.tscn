@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8da45sbk324g"]
+
+[ext_resource type="PackedScene" uid="uid://dm4ooagv0m6rt" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://biuvn2mfdn21m" path="res://scenes/fish.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dxmyvuvblfuck" path="res://scenes/shrimp.tscn" id="3_iywne"]
+[ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_p57ef"]
+[ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="5_u5sy4"]
+
+[node name="Game" type="Node2D" unique_id=2143538859]
+
+[node name="Aquarium" parent="." unique_id=959143749 instance=ExtResource("1_lnu2h")]
+
+[node name="Fish" parent="." unique_id=181024416 instance=ExtResource("2_lbhrr")]
+position = Vector2(732, 316)
+stats = ExtResource("3_p57ef")
+
+[node name="Shrimp" parent="." unique_id=1148721874 instance=ExtResource("3_iywne")]
+position = Vector2(442, 357)
+stats = ExtResource("5_u5sy4")

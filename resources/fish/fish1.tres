@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="fish_stats" format=3 uid="uid://2p6tervsse1u"]
+
+[ext_resource type="Script" uid="uid://b8dfjglmxh7w3" path="res://resources/templates/fish_stats.gd" id="1_wm0kw"]
+[ext_resource type="Texture2D" uid="uid://fmmqf65tixw4" path="res://assets/fish.png" id="2_8ksms"]
+
+[resource]
+script = ExtResource("1_wm0kw")
+fishID = "1"
+texture = ExtResource("2_8ksms")
+oxygen = 10
+waste = 10
+foodmin = 7
+foodmax = 10
+metadata/_custom_type_script = "uid://b8dfjglmxh7w3"

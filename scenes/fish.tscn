@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://biuvn2mfdn21m"]
+
+[ext_resource type="Script" uid="uid://bvgx46i17o478" path="res://scripts/fish.gd" id="2_8g0i4"]
+
+[node name="Fish" type="Sprite2D" unique_id=181024416]
+script = ExtResource("2_8g0i4")

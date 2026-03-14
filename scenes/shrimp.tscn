@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxmyvuvblfuck"]
+
+[ext_resource type="Script" uid="uid://hlj5b4y6ovs0" path="res://scripts/shrimp.gd" id="2_qf00f"]
+
+[node name="Shrimp" type="Sprite2D" unique_id=1148721874]
+script = ExtResource("2_qf00f")
