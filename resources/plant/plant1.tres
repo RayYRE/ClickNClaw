@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="plant_stats" format=3 uid="uid://bwdd86bvetua"]
 
 [ext_resource type="Script" uid="uid://btgiq3ikd70jt" path="res://resources/templates/plant_stats.gd" id="1_arjl7"]
+[ext_resource type="Texture2D" uid="uid://cgarja47knhub" path="res://assets/seaweed.png" id="2_ydhjh"]
 
 [resource]
 script = ExtResource("1_arjl7")
+plantID = "1"
+texture = ExtResource("2_ydhjh")
 metadata/_custom_type_script = "uid://btgiq3ikd70jt"
