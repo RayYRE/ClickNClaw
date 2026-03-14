@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ey23bli0cr84"]
+
+[ext_resource type="Script" uid="uid://df5jpuqs4cbuv" path="res://scripts/spawn_button.gd" id="1_ghwsi"]
+
+[node name="SpawnButton" type="Node2D" unique_id=1980805055]
+script = ExtResource("1_ghwsi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1672631533]
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Button" type="Button" parent="." unique_id=1790940598]
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=665333449]
+position = Vector2(50, 50)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

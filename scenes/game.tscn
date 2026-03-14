@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="5_u5sy4"]
 [ext_resource type="PackedScene" path="res://scenes/plant.tscn" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://31k64isk8h34" path="res://scenes/Notebook/notebook.tscn" id="9_0tnpc"]
 
 [node name="Game" type="Node2D" unique_id=2143538859]
 script = ExtResource("1_u5sy4")
@@ -38,3 +39,6 @@ autostart = true
 ignore_time_scale = true
 
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]
+
+[node name="Node2D" parent="." unique_id=987489432 instance=ExtResource("9_0tnpc")]
+position = Vector2(900, 68)

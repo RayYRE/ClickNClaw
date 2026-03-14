@@ -3,9 +3,9 @@ extends Sprite2D
 @export var stats : fish_stats
 
 # global tank size
-var x_min = 259+50
-var x_max = 1021-50
-var y_min = 150+25
+var x_min = 80+50
+var x_max = 845-50
+var y_min = 147+25
 var y_max = 570-25
 
 var _target:Vector2

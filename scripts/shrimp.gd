@@ -3,9 +3,9 @@ extends Sprite2D
 @export var stats : shrimp_stats
 
 # global tank size
-var x_min = 259+15
-var x_max = 1021-15
-var y_min = 150+15
+var x_min = 80+15
+var x_max = 845-15
+var y_min = 147+15
 var y_max = 570-15
 
 var _target:Vector2

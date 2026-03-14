@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://u2pv5e6xvuq7"]
+
+[ext_resource type="Script" uid="uid://dwnwqffwmnnum" path="res://scripts/notebook_page.gd" id="1_ctmrq"]
+[ext_resource type="PackedScene" uid="uid://ey23bli0cr84" path="res://scenes/Notebook/spawn_button.tscn" id="2_57fvw"]
+[ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="3_ctmrq"]
+
+[node name="PlantPage" type="Node2D" unique_id=733486466]
+script = ExtResource("1_ctmrq")
+
+[node name="SpawnButton" parent="." unique_id=1980805055 instance=ExtResource("2_57fvw")]
+entity = ExtResource("3_ctmrq")
+
+[node name="SpawnButton2" parent="." unique_id=122130929 instance=ExtResource("2_57fvw")]
+position = Vector2(150, 0)
+entity = ExtResource("3_ctmrq")
+
+[node name="SpawnButton3" parent="." unique_id=2140277755 instance=ExtResource("2_57fvw")]
+position = Vector2(0, 150)
+entity = ExtResource("3_ctmrq")
+
+[node name="SpawnButton4" parent="." unique_id=983328852 instance=ExtResource("2_57fvw")]
+position = Vector2(150, 150)
+entity = ExtResource("3_ctmrq")

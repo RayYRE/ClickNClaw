@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://nd38cnt71oau"]
+
+[ext_resource type="Script" uid="uid://dwnwqffwmnnum" path="res://scripts/notebook_page.gd" id="1_g0bqo"]
+[ext_resource type="PackedScene" uid="uid://ey23bli0cr84" path="res://scenes/Notebook/spawn_button.tscn" id="2_fbvxu"]
+[ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_wn0d6"]
+
+[node name="FishPage" type="Node2D" unique_id=733486466]
+script = ExtResource("1_g0bqo")
+
+[node name="SpawnButton" parent="." unique_id=1980805055 instance=ExtResource("2_fbvxu")]
+entity = ExtResource("3_wn0d6")
+
+[node name="SpawnButton2" parent="." unique_id=122130929 instance=ExtResource("2_fbvxu")]
+position = Vector2(150, 0)
+entity = ExtResource("3_wn0d6")
+
+[node name="SpawnButton3" parent="." unique_id=2140277755 instance=ExtResource("2_fbvxu")]
+position = Vector2(0, 150)
+entity = ExtResource("3_wn0d6")
+
+[node name="SpawnButton4" parent="." unique_id=983328852 instance=ExtResource("2_fbvxu")]
+position = Vector2(150, 150)
+entity = ExtResource("3_wn0d6")
