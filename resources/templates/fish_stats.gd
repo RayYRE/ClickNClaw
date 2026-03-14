@@ -2,6 +2,7 @@ extends Resource
 
 class_name fish_stats
 
+@export var type = "fish"
 @export var fishID = ""
 @export var texture = Texture2D
 @export var oxygen : int

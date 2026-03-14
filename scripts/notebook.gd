@@ -1,5 +1,6 @@
 extends Node2D
 
+signal spawn(entity)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_spawn_pressed(entity) -> void:
-	print(entity.oxygen)
+	emit_signal(("spawn"), entity) 
 
 func _on_fish_button_pressed() -> void:
 	$ShrimpPage.visible = false

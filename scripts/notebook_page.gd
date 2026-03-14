@@ -8,7 +8,6 @@ func _ready() -> void:
 		slot.connect("spawn_pressed", _on_spawn_pressed)
 		
 func _on_spawn_pressed(entity):
-	print("page received:", entity.oxygen)
 	emit_signal("spawn_pressed", entity)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

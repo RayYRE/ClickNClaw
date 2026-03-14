@@ -12,9 +12,12 @@ var waste_rate : int
 var food_rate : int
 
 var fish_scene = load("res://scenes/fish.tscn")
+var shrimp_scene = load("res://scenes/shrimp.tscn")
+var plant_scene = load("res://scenes/plant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Notebook.connect("spawn", _on_spawn_pressed)
 	fish_count = 0
 	shrimp_count = 0
 	food_count = 0
@@ -75,3 +78,17 @@ func update_rate(child: Node2D)-> void :
 	O2_rate += child.stats.oxygen
 	waste_rate += child.stats.waste
 	food_rate += randi_range(child.stats.foodmin, child.stats.foodmax)
+	
+func _on_spawn_pressed(entity) -> void:
+	print("type :", entity.type)
+	var instance
+	if (entity.type == "plant"):
+		instance = plant_scene.instantiate()
+	elif (entity.type == "fish"):
+		instance = fish_scene.instantiate()
+	else:
+		instance = shrimp_scene.instantiate()
+
+	instance.stats = entity
+	instance.global_position = Vector2(300, 300)
+	add_child(instance) 
