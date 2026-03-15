@@ -15,10 +15,12 @@ var food_rate : int
 var fish_scene = load("res://scenes/fish.tscn")
 var shrimp_scene = load("res://scenes/shrimp.tscn")
 var plant_scene = load("res://scenes/plant.tscn")
+var food_scene = load("res://scenes/food.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Notebook.connect("spawn", _on_spawn_pressed)
+	$FeedButton.connect("feed", _feed)
 	fish_count = 1
 	shrimp_count = 1
 	food_count = 0
@@ -89,4 +91,17 @@ func _on_spawn_pressed(entity) -> void:
 func _food_eaten(money):
 	money_count += money
 	food_count -= 1
+	pass
+
+func _feed():
+	var foodspawn_x_min = 85
+	var foodspawn_x_max = 840
+	var foodspawn_y = 100
+	
+	var foodspawn_x = (randi() % (foodspawn_x_max - foodspawn_x_min)) + 85
+	
+	food_count += 1
+	var food_instance = food_scene.instantiate()
+	food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
+	add_child(food_instance)
 	pass

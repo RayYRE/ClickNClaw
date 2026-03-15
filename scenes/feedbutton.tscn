@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b32tx81v5i5i4"]
+
+[ext_resource type="Script" uid="uid://b5guol8sw0u8r" path="res://scripts/feedbutton.gd" id="1_tdl7j"]
+
+[node name="FeedButton" type="Node2D" unique_id=64593579]
+script = ExtResource("1_tdl7j")
+
+[node name="Button" type="Button" parent="." unique_id=624189921]
+offset_right = 211.0
+offset_bottom = 67.0
+text = "FEED
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

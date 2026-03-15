@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://8da45sbk324g"]
 
-[ext_resource type="PackedScene" uid="uid://dm4ooagv0m6rt" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://drj524b5dh254" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bfmgwtt0jhcst" path="res://assets/temp_background.jpeg" id="1_p57ef"]
 [ext_resource type="Script" uid="uid://01amndesneyd" path="res://scripts/game.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://biuvn2mfdn21m" path="res://scenes/fish.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dxmyvuvblfuck" path="res://scenes/shrimp.tscn" id="3_iywne"]
 [ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="5_u5sy4"]
-[ext_resource type="PackedScene" path="res://scenes/plant.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://5pcgcschsra1" path="res://scenes/plant.tscn" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://31k64isk8h34" path="res://scenes/Notebook/notebook.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://b32tx81v5i5i4" path="res://scenes/feedbutton.tscn" id="10_vtaks"]
 
 [node name="Game" type="Node2D" unique_id=2143538859]
 script = ExtResource("1_u5sy4")
@@ -40,5 +41,8 @@ ignore_time_scale = true
 
 [node name="Notebook" parent="." unique_id=987489432 instance=ExtResource("9_0tnpc")]
 position = Vector2(900, 68)
+
+[node name="FeedButton" parent="." unique_id=64593579 instance=ExtResource("10_vtaks")]
+position = Vector2(355, 610)
 
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]
