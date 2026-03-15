@@ -17,6 +17,8 @@ var shrimp_scene = load("res://scenes/shrimp.tscn")
 var plant_scene = load("res://scenes/plant.tscn")
 var food_scene = load("res://scenes/food.tscn")
 
+var food_value : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Notebook.connect("spawn", _on_spawn_pressed)
@@ -33,6 +35,8 @@ func _ready() -> void:
 	O2_rate = 0
 	waste_rate = 0
 	food_rate = 0
+	
+	food_value = 1
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -102,6 +106,7 @@ func _feed(num):
 		var foodspawn_x = (randi() % (foodspawn_x_max - foodspawn_x_min)) + 85
 		var food_instance = food_scene.instantiate()
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
+		food_instance.value = food_value
 		add_child(food_instance)
 
 
