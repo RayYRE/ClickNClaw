@@ -12,26 +12,51 @@ script = ExtResource("1_g2fck")
 offset_left = 60.0
 offset_right = 360.0
 offset_bottom = 596.0
+color = Color(0.5882353, 0.2627451, 0.015686275, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1750697732]
+offset_left = 62.0
+offset_top = 2.0
+offset_right = 358.0
+offset_bottom = 594.0
 color = Color(0.99603707, 0.6596129, 0.4773404, 1)
 
 [node name="Fish" type="ColorRect" parent="." unique_id=1142710226]
 offset_right = 60.0
 offset_bottom = 60.0
-color = Color(0.99603707, 0.6596129, 0.4773404, 1)
+color = Color(0.5882353, 0.2627451, 0.015686275, 1)
+
+[node name="Fish2" type="ColorRect" parent="Fish" unique_id=1229777172]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 59.0
+offset_bottom = 58.0
+color = Color(0.99607843, 0.65882355, 0.47843137, 1)
 
 [node name="FishButton" type="Button" parent="Fish" unique_id=796946039]
 layout_mode = 0
+offset_top = 1.0
 offset_right = 60.0
-offset_bottom = 60.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "fish"
+flat = true
 clip_text = true
 
 [node name="Shrimp" type="ColorRect" parent="." unique_id=565114085]
 offset_top = 60.0
 offset_right = 60.0
-offset_bottom = 120.0
-color = Color(0.99486095, 0.62270224, 0.4201222, 1)
+offset_bottom = 119.0
+color = Color(0.5882353, 0.2627451, 0.015686275, 1)
+
+[node name="Fish3" type="ColorRect" parent="Shrimp" unique_id=1082210240]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 59.0
+offset_bottom = 57.0
+color = Color(0.99607843, 0.65882355, 0.47843137, 1)
 
 [node name="ShrimpButton" type="Button" parent="Shrimp" unique_id=1956018896]
 layout_mode = 1
@@ -43,17 +68,27 @@ anchor_bottom = 0.5
 offset_left = -30.0
 offset_top = -30.0
 offset_right = 30.0
-offset_bottom = 30.0
+offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 text = "shrimp"
+flat = true
 
 [node name="Plant" type="ColorRect" parent="." unique_id=791573734]
 offset_top = 120.0
 offset_right = 60.0
-offset_bottom = 180.0
-color = Color(0.99486095, 0.62270224, 0.4201222, 1)
+offset_bottom = 178.0
+color = Color(0.5882353, 0.2627451, 0.015686275, 1)
+
+[node name="Fish4" type="ColorRect" parent="Plant" unique_id=654335603]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 59.0
+offset_bottom = 56.0
+color = Color(0.99607843, 0.65882355, 0.47843137, 1)
 
 [node name="PlantButton" type="Button" parent="Plant" unique_id=2134025419]
 layout_mode = 1
@@ -65,11 +100,13 @@ anchor_bottom = 0.5
 offset_left = -30.0
 offset_top = -30.0
 offset_right = 30.0
-offset_bottom = 30.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "plant"
+flat = true
 
 [node name="Achievements" type="ColorRect" parent="." unique_id=2034482540]
 offset_top = 180.0
@@ -92,6 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 16
 text = "achiev"
+flat = true
 
 [node name="ShrimpPage" parent="." unique_id=733486466 instance=ExtResource("1_vodji")]
 visible = false

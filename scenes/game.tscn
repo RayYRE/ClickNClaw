@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5pcgcschsra1" path="res://scenes/plant.tscn" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://31k64isk8h34" path="res://scenes/Notebook/notebook.tscn" id="9_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://hoq5ofb6lrm2" path="res://assets/coin2.png" id="9_vtaks"]
 [ext_resource type="PackedScene" uid="uid://b32tx81v5i5i4" path="res://scenes/feedbutton.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cyyt56vjufrtv" path="res://scenes/autofeeder.tscn" id="11_kvpfn"]
 
@@ -37,5 +38,17 @@ position = Vector2(900, 68)
 position = Vector2(355, 610)
 
 [node name="AutoFeeder" parent="." unique_id=972075322 instance=ExtResource("11_kvpfn")]
+
+[node name="Label" type="Label" parent="." unique_id=1690437550]
+offset_left = 172.0
+offset_top = 14.0
+offset_right = 299.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=110105982]
+position = Vector2(143, 38)
+texture = ExtResource("9_vtaks")
 
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]

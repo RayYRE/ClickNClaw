@@ -12,6 +12,7 @@ offset_bottom = 100.0
 [node name="Button" type="Button" parent="." unique_id=1790940598]
 offset_right = 100.0
 offset_bottom = 100.0
+flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=665333449]
 position = Vector2(50, 50)
