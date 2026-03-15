@@ -16,3 +16,4 @@ texture = SubResource("PlaceholderTexture2D_2glmo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360069037]
 shape = SubResource("CircleShape2D_xven1")
+disabled = true

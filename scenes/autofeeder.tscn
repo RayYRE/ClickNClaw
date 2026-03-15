@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cyyt56vjufrtv"]
+
+[ext_resource type="Script" uid="uid://bdmm6mldemofd" path="res://scripts/autofeeder.gd" id="1_gphpf"]
+
+[node name="AutoFeeder" type="Node2D" unique_id=972075322]
+script = ExtResource("1_gphpf")
+
+[node name="Timer" type="Timer" parent="." unique_id=1263708671]
+wait_time = 5.0
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=1314459903]
+offset_right = 51.0
+offset_bottom = 25.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

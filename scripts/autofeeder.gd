@@ -1,5 +1,6 @@
 extends Node2D
 
+var num = 2
 signal feed(num)
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +13,11 @@ func _process(delta: float) -> void:
 	pass
 
 
+func _on_timer_timeout() -> void:
+	emit_signal("feed", num)
+	
+func upgrade():
+	$Timer.wait_time *= 0.5
+
 func _on_button_pressed() -> void:
-	emit_signal("feed", 1)
-	pass # Replace with function body.
+	upgrade()

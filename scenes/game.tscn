@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://31k64isk8h34" path="res://scenes/Notebook/notebook.tscn" id="9_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://b32tx81v5i5i4" path="res://scenes/feedbutton.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cyyt56vjufrtv" path="res://scenes/autofeeder.tscn" id="11_kvpfn"]
 
 [node name="Game" type="Node2D" unique_id=2143538859]
 script = ExtResource("1_u5sy4")
@@ -44,5 +45,7 @@ position = Vector2(900, 68)
 
 [node name="FeedButton" parent="." unique_id=64593579 instance=ExtResource("10_vtaks")]
 position = Vector2(355, 610)
+
+[node name="AutoFeeder" parent="." unique_id=972075322 instance=ExtResource("11_kvpfn")]
 
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]
