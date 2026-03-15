@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cd8j5bt5wrrvo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2glmo"]
+size = Vector2(15, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xven1"]
+radius = 8.0
+
+[node name="Food" type="CharacterBody2D" unique_id=983806259]
+
+[node name="FoodSprite" type="Sprite2D" parent="." unique_id=969833797]
+texture = SubResource("PlaceholderTexture2D_2glmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360069037]
+shape = SubResource("CircleShape2D_xven1")

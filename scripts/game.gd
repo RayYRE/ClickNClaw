@@ -1,5 +1,7 @@
 extends Node2D
 
+var money : int
+
 var fish_count : int
 var shrimp_count : int
 var food_count : int
@@ -54,12 +56,14 @@ func _on_period_timeout() -> void:
 	print("waste  = ", waste_count)
 	print("O2     = ", O2_count)
 
-	pass # Replace with function body.
+	pass
 
 func update_rate(child: Node2D)-> void :
 	O2_rate += child.stats.oxygen
 	waste_rate += child.stats.waste
 	food_rate += randi_range(child.stats.foodmin, child.stats.foodmax)
+	
+	pass
 	
 func _on_spawn_pressed(entity) -> void:
 	print("type :", entity.type)
@@ -79,3 +83,5 @@ func _on_spawn_pressed(entity) -> void:
 	add_child(instance) 
 	
 	update_rate(instance)
+	
+	pass
