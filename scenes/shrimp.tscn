@@ -3,4 +3,10 @@
 [ext_resource type="Script" uid="uid://hlj5b4y6ovs0" path="res://scripts/shrimp.gd" id="2_qf00f"]
 
 [node name="Shrimp" type="Sprite2D" unique_id=1148721874]
+scale = Vector2(0.2, 0.2)
 script = ExtResource("2_qf00f")
+
+[node name="EatTimer" type="Timer" parent="." unique_id=483926222]
+autostart = true
+
+[connection signal="timeout" from="EatTimer" to="." method="_on_eat_timer_timeout"]

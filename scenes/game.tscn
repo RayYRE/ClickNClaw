@@ -1,16 +1,13 @@
 [gd_scene format=3 uid="uid://8da45sbk324g"]
 
-[ext_resource type="PackedScene" uid="uid://dm4ooagv0m6rt" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://drj524b5dh254" path="res://scenes/aquarium.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bfmgwtt0jhcst" path="res://assets/temp_background.jpeg" id="1_p57ef"]
 [ext_resource type="Script" uid="uid://01amndesneyd" path="res://scripts/game.gd" id="1_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://biuvn2mfdn21m" path="res://scenes/fish.tscn" id="2_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://dxmyvuvblfuck" path="res://scenes/shrimp.tscn" id="3_iywne"]
-[ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="5_u5sy4"]
-[ext_resource type="PackedScene" path="res://scenes/plant.tscn" id="7_gee14"]
+[ext_resource type="PackedScene" uid="uid://5pcgcschsra1" path="res://scenes/plant.tscn" id="7_gee14"]
 [ext_resource type="Resource" uid="uid://bwdd86bvetua" path="res://resources/plant/plant1.tres" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://31k64isk8h34" path="res://scenes/Notebook/notebook.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" path="res://scenes/feedbutton.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" path="res://scenes/autofeeder.tscn" id="11_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://b32tx81v5i5i4" path="res://scenes/feedbutton.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://cyyt56vjufrtv" path="res://scenes/autofeeder.tscn" id="11_kvpfn"]
 
 [node name="Game" type="Node2D" unique_id=2143538859]
 script = ExtResource("1_u5sy4")
@@ -27,13 +24,6 @@ position = Vector2(464, 360)
 position = Vector2(556, 512)
 stats = ExtResource("8_gee14")
 
-[node name="Fish" parent="." unique_id=181024416 instance=ExtResource("2_lbhrr")]
-position = Vector2(732, 316)
-
-[node name="Shrimp" parent="." unique_id=1148721874 instance=ExtResource("3_iywne")]
-position = Vector2(442, 357)
-stats = ExtResource("5_u5sy4")
-
 [node name="Period" type="Timer" parent="." unique_id=392397276]
 unique_name_in_owner = true
 wait_time = 2.0
@@ -48,7 +38,4 @@ position = Vector2(355, 610)
 
 [node name="AutoFeeder" parent="." unique_id=972075322 instance=ExtResource("11_kvpfn")]
 
-[node name="EatPeriod" type="Timer" parent="." unique_id=1779326145]
-
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]
-[connection signal="timeout" from="EatPeriod" to="." method="_on_eat_period_timeout"]

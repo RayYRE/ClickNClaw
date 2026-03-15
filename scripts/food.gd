@@ -6,7 +6,7 @@ const GRAVITY = 100
 
 func _process(delta: float) -> void:
 	if global_position.y > 200:
-		$FoodSprite.self_modulate.a *= 0.98
+		$ColorRect.self_modulate.a *= 0.98
 	
 	if global_position.y > 400:
 		queue_free()

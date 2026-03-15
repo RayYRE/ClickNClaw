@@ -1,15 +1,14 @@
 extends Node
 
-@export var value : int
 @export var position : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position.y += randf_range(-50, 0)
-	display_number(self.value, position)
+	display_number(position)
 	
 
-func display_number(value: int, position: Vector2):
+func display_number(position: Vector2):
 	var number = Label.new()
 	number.global_position = position
 	number.text = str("$")

@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var stats : shrimp_stats
 
-signal ate(money)
+signal ate_waste(money, position)
 
 # global tank size
 var x_min = 80+15
@@ -19,8 +19,6 @@ var dashing = false
 var dash_timer = 0.0
 const dash_duration = 3.0
 
-var full = false
-var FULL_TIMER = 2
 var money : int
 
 # Called when the node enters the scene tree for the first time.
@@ -45,11 +43,6 @@ func reset_speed():
 	speed = 30
 
 func _process(delta):
-	if full:
-		FULL_TIMER -= 1
-		if (FULL_TIMER == 0):
-			full = false
-			reset_full_timer()
 
 	if dashing:
 		dash_timer += delta
@@ -67,10 +60,10 @@ func _process(delta):
 	var distance = speed * delta
 
 	position += _direction * distance
-
+	
 func eat():
-	full = true
-	emit_signal("ate", money)
+	emit_signal("ate_waste", money, self.global_position)
 
-func reset_full_timer():
-	FULL_TIMER = 2
+
+func _on_eat_timer_timeout() -> void:
+	eat()

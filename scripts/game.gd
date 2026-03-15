@@ -44,33 +44,43 @@ func _on_period_timeout() -> void:
 
 
 func _on_spawn_pressed(entity) -> void:
-	print("type :", entity.type)
-	var instance
-	if (entity.type == "plant"):
-		instance = plant_scene.instantiate()
-		plant_count += 1
-	elif (entity.type == "fish"):
-		instance = fish_scene.instantiate()
-		fish_count += 1
-	else:
-		instance = shrimp_scene.instantiate()
-		shrimp_count += 1
+	for i in range(100):
+		
+		var instance
+		if (entity.type == "plant"):
+			instance = plant_scene.instantiate()
+			plant_count += 1
+		elif (entity.type == "fish"):
+			instance = fish_scene.instantiate()
+			instance.connect("ate", _food_eaten)
+			fish_count += 1
+		else:
+			instance = shrimp_scene.instantiate()
+			instance.connect("ate_waste", _waste_eaten)
+			shrimp_count += 1
 
-	instance.stats = entity
-	instance.global_position = Vector2(300, 300)
-	add_child(instance) 
-	instance.connect("ate", _food_eaten)
+		instance.stats = entity
+		instance.global_position = Vector2(300, 300)
+		add_child(instance) 
 
-
-func _food_eaten(money_multiplier, fish_position):
-	if food_count > 0 :
-		print("signal emitted")
-		money_count += money_multiplier
-		food_count -= 1
+func _waste_eaten(shrimp_money, shrimp_position):
+	if waste_count > 0 :
+		money_count += shrimp_money
+		waste_count -= 1
 		
 		var earning_instance
 		earning_instance = earning_scene.instantiate()
-		earning_instance.value = self.food_value
+		earning_instance.position = shrimp_position
+		add_child(earning_instance)
+
+func _food_eaten(money_multiplier, fish_position):
+	if food_count > 0 :
+		money_count += money_multiplier* food_value
+		food_count -= 1
+		waste_count += 1
+		
+		var earning_instance
+		earning_instance = earning_scene.instantiate()
 		earning_instance.position = fish_position
 		add_child(earning_instance)
 
@@ -87,10 +97,5 @@ func _feed(num):
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
 		add_child(food_instance)
 
-
-func _on_eat_period_timeout() -> void:
-	var food_ate = min(fish_count+shrimp_count, food_count) 
-	var earnings = food_ate * food_value
-	money_count += earnings
-	food_count -= food_ate
-	
+func count_creator():	
+	pass

@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://cd8j5bt5wrrvo"]
+[gd_scene format=3 uid="uid://g0fv2iydb4k3"]
 
 [ext_resource type="Script" uid="uid://xw1ovidsts3j" path="res://scripts/food.gd" id="1_xven1"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2glmo"]
-size = Vector2(15, 15)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xven1"]
-radius = 8.0
+radius = 5.0
 
 [node name="Food" type="CharacterBody2D" unique_id=983806259]
 script = ExtResource("1_xven1")
 
-[node name="FoodSprite" type="Sprite2D" parent="." unique_id=969833797]
-texture = SubResource("PlaceholderTexture2D_2glmo")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=202452861]
+offset_right = 5.0
+offset_bottom = 5.0
+size_flags_horizontal = 4
+color = Color(0.078431375, 0.5372549, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360069037]
+position = Vector2(2, 3)
 shape = SubResource("CircleShape2D_xven1")
 disabled = true
