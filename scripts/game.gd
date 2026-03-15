@@ -1,7 +1,6 @@
 extends Node2D
 
-var money : int
-
+var money_count : int
 var fish_count : int
 var shrimp_count : int
 var food_count : int
@@ -26,6 +25,7 @@ func _ready() -> void:
 	plant_count = 1
 	waste_count = 0
 	O2_count = 0
+	money_count = 0
 	
 	O2_rate = 0
 	waste_rate = 0
@@ -55,6 +55,7 @@ func _on_period_timeout() -> void:
 	print("plant  = ", plant_count)
 	print("waste  = ", waste_count)
 	print("O2     = ", O2_count)
+	print("money  = ", money_count)
 
 	pass
 
@@ -81,7 +82,11 @@ func _on_spawn_pressed(entity) -> void:
 	instance.stats = entity
 	instance.global_position = Vector2(300, 300)
 	add_child(instance) 
+	instance.connect("ate", _food_eaten)
 	
 	update_rate(instance)
-	
+
+func _food_eaten(money):
+	money_count += money
+	food_count -= 1
 	pass

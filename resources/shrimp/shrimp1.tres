@@ -11,4 +11,5 @@ oxygen = -3
 waste = 2
 foodmin = -3
 foodmax = -7
+money = 1
 metadata/_custom_type_script = "uid://177nfp36qqss"
