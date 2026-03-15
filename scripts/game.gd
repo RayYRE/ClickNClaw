@@ -18,10 +18,10 @@ var plant_scene = load("res://scenes/plant.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Notebook.connect("spawn", _on_spawn_pressed)
-	fish_count = 0
-	shrimp_count = 0
+	fish_count = 1
+	shrimp_count = 1
 	food_count = 0
-	plant_count = 0
+	plant_count = 1
 	waste_count = 0
 	O2_count = 0
 	
@@ -37,29 +37,10 @@ func _process(delta: float) -> void:
 
 
 func _on_period_timeout() -> void:
-	for child in get_children():
-		if child.name.substr(0, 4) == "Fish":
-			fish_count += 1
-			update_rate(child)
-			
-		elif child.name.substr(0, 5) == "Plant":
-			fish_count += 1
-			update_rate(child)
-			
-		elif child.name.substr(0, 6) == "Shrimp":
-			shrimp_count += 1
-			update_rate(child)
-			
-		
 	# Calculate all the rate
 	O2_count += O2_rate
 	waste_count += waste_rate
 	food_count += food_rate
-	
-	# Resets all the rate
-	O2_rate = 0
-	waste_rate = 0
-	food_rate = 0
 	
 	if O2_count < 0:
 		O2_count = 0
@@ -72,6 +53,7 @@ func _on_period_timeout() -> void:
 	print("plant  = ", plant_count)
 	print("waste  = ", waste_count)
 	print("O2     = ", O2_count)
+
 	pass # Replace with function body.
 
 func update_rate(child: Node2D)-> void :
@@ -84,11 +66,16 @@ func _on_spawn_pressed(entity) -> void:
 	var instance
 	if (entity.type == "plant"):
 		instance = plant_scene.instantiate()
+		plant_count += 1
 	elif (entity.type == "fish"):
 		instance = fish_scene.instantiate()
+		fish_count += 1
 	else:
 		instance = shrimp_scene.instantiate()
+		shrimp_count += 1
 
 	instance.stats = entity
 	instance.global_position = Vector2(300, 300)
 	add_child(instance) 
+	
+	update_rate(instance)
