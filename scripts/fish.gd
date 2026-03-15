@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var stats : fish_stats
 
-signal ate(money)
+signal ate(money_multiplier, fish_position)
 
 # global tank size
 var x_min = 80+50
@@ -19,15 +19,13 @@ var dashing = false
 var dash_timer = 0.0
 const dash_duration = 3.0
 
-var full = false
-var FULL_TIMER = 2
-var money : int
+var money_multiplier : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# initialise resources stats (WIP)
 	texture = stats.texture
-	money = stats.money
+	money_multiplier = stats.money_multiplier
 	_pick_new_target()
 
 func _has_reached_target():
@@ -45,13 +43,6 @@ func reset_speed():
 	speed = 50
 
 func _process(delta):
-	
-	if full:
-		FULL_TIMER -= 1
-		if (FULL_TIMER == 0):
-			full = false
-			reset_full_timer()
-
 	if dashing:
 		dash_timer += delta
 		if (dash_timer > dash_duration):
@@ -70,8 +61,8 @@ func _process(delta):
 	position += _direction * distance
 
 func eat():
-	full = true
-	emit_signal("ate", money)
+	emit_signal("ate", money_multiplier, self.global_position)
 
-func reset_full_timer():
-	FULL_TIMER = 2
+
+func _on_eat_period_timeout() -> void:
+	eat()

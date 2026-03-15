@@ -5,7 +5,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	position.y += randf_range(-150, 0)
+	position.y += randf_range(-50, 0)
 	display_number(self.value, position)
 	
 
@@ -19,7 +19,7 @@ func display_number(value: int, position: Vector2):
 	var color = Color(0.467, 0.851, 0.071, 1.0)
 	
 	number.label_settings.font_color = color
-	number.label_settings.font_size = 24
+	number.label_settings.font_size = 28
 	number.label_settings.outline_color = Color(0, 0, 0)
 	number.label_settings.outline_size = 2
 	

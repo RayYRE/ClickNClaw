@@ -9,4 +9,4 @@ class_name fish_stats
 @export var waste : int
 @export var foodmin : int
 @export var foodmax : int
-@export var money : int
+@export var money_multiplier : float

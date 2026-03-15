@@ -17,3 +17,8 @@ stats = ExtResource("3_pgks6")
 [node name="FishCollision" type="CollisionShape2D" parent="FishArea" unique_id=962915865]
 position = Vector2(-5.684342e-14, 0)
 shape = SubResource("CircleShape2D_nub35")
+
+[node name="EatPeriod" type="Timer" parent="." unique_id=1910559296]
+autostart = true
+
+[connection signal="timeout" from="EatPeriod" to="." method="_on_eat_period_timeout"]

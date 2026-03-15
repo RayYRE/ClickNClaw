@@ -49,7 +49,6 @@ position = Vector2(355, 610)
 [node name="AutoFeeder" parent="." unique_id=972075322 instance=ExtResource("11_kvpfn")]
 
 [node name="EatPeriod" type="Timer" parent="." unique_id=1779326145]
-autostart = true
 
 [connection signal="timeout" from="Period" to="." method="_on_period_timeout"]
 [connection signal="timeout" from="EatPeriod" to="." method="_on_eat_period_timeout"]

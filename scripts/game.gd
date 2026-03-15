@@ -6,16 +6,12 @@ var shrimp_count : int
 var food_count : int
 var plant_count : int
 var waste_count : int
-var O2_count : int
-
-var O2_rate : int
-var waste_rate : int
-var food_rate : int
 
 var fish_scene = load("res://scenes/fish.tscn")
 var shrimp_scene = load("res://scenes/shrimp.tscn")
 var plant_scene = load("res://scenes/plant.tscn")
 var food_scene = load("res://scenes/food.tscn")
+var earning_scene = load("res://scenes/earning.tscn")
 
 var food_value : int
 
@@ -29,12 +25,7 @@ func _ready() -> void:
 	food_count = 0
 	plant_count = 1
 	waste_count = 0
-	O2_count = 0
 	money_count = 0
-	
-	O2_rate = 0
-	waste_rate = 0
-	food_rate = 0
 	
 	food_value = 1
 	pass # Replace with function body.
@@ -44,33 +35,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_period_timeout() -> void:
-	# Calculate all the rate
-	O2_count += O2_rate
-	waste_count += waste_rate
-	food_count += food_rate
-	
-	if O2_count < 0:
-		O2_count = 0
-	if waste_count < 0:
-		waste_count = 0
-
 	print("fish   = ", fish_count)
 	print("shrimp = ", shrimp_count)
 	print("food   = ", food_count)
 	print("plant  = ", plant_count)
 	print("waste  = ", waste_count)
-	print("O2     = ", O2_count)
 	print("money  = ", money_count)
 
-	pass
 
-func update_rate(child: Node2D)-> void :
-	O2_rate += child.stats.oxygen
-	waste_rate += child.stats.waste
-	food_rate += randi_range(child.stats.foodmin, child.stats.foodmax)
-	
-	pass
-	
 func _on_spawn_pressed(entity) -> void:
 	print("type :", entity.type)
 	var instance
@@ -88,13 +60,20 @@ func _on_spawn_pressed(entity) -> void:
 	instance.global_position = Vector2(300, 300)
 	add_child(instance) 
 	instance.connect("ate", _food_eaten)
-	
-	update_rate(instance)
 
-func _food_eaten(money):
-	money_count += money
-	food_count -= 1
-	pass
+
+func _food_eaten(money_multiplier, fish_position):
+	if food_count > 0 :
+		print("signal emitted")
+		money_count += money_multiplier
+		food_count -= 1
+		
+		var earning_instance
+		earning_instance = earning_scene.instantiate()
+		earning_instance.value = self.food_value
+		earning_instance.position = fish_position
+		add_child(earning_instance)
+
 
 func _feed(num):
 	var foodspawn_x_min = 85
@@ -106,12 +85,12 @@ func _feed(num):
 		var foodspawn_x = (randi() % (foodspawn_x_max - foodspawn_x_min)) + 85
 		var food_instance = food_scene.instantiate()
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
-		food_instance.value = food_value
 		add_child(food_instance)
 
 
 func _on_eat_period_timeout() -> void:
-	var earnings = min(fish_count+shrimp_count, food_count)
+	var food_ate = min(fish_count+shrimp_count, food_count) 
+	var earnings = food_ate * food_value
 	money_count += earnings
-	food_count -= earnings
+	food_count -= food_ate
 	
