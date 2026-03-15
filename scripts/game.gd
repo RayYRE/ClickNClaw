@@ -103,3 +103,10 @@ func _feed(num):
 		var food_instance = food_scene.instantiate()
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
 		add_child(food_instance)
+
+
+func _on_eat_period_timeout() -> void:
+	var earnings = min(fish_count+shrimp_count, food_count)
+	money_count += earnings
+	food_count -= earnings
+	
