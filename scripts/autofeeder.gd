@@ -3,6 +3,8 @@ extends Node2D
 var num = 2
 signal feed(num)
 
+signal upgrade_auto
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,4 +22,4 @@ func upgrade():
 	$Timer.wait_time *= 0.5
 
 func _on_button_pressed() -> void:
-	upgrade()
+	emit_signal("upgrade_auto")
