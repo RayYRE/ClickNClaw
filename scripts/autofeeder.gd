@@ -1,6 +1,6 @@
 extends Node2D
 
-var num = 2
+var num = 4
 signal feed(num)
 
 signal upgrade_auto
@@ -20,6 +20,8 @@ func _on_timer_timeout() -> void:
 	
 func upgrade():
 	$Timer.wait_time *= 0.5
+	if $Timer.wait_time <= 0.5:
+		num += 1
 
 func _on_button_pressed() -> void:
 	emit_signal("upgrade_auto")

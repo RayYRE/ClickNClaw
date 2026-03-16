@@ -103,12 +103,16 @@ func _feed(num):
 	var foodspawn_x_max = 840
 	var foodspawn_y = 100
 	
-	food_count += num
 	for i in range(num):
 		var foodspawn_x = (randi() % (foodspawn_x_max - foodspawn_x_min)) + 85
 		var food_instance = food_scene.instantiate()
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
 		add_child(food_instance)
+	
+	if feeder_upgrade_cost >= 5000:
+		food_count += num * 2
+	else: 
+		food_count += num
 
 func _upgrade_auto():
 	if money_count >= feeder_upgrade_cost:
