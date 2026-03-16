@@ -10,8 +10,10 @@ wait_time = 5.0
 autostart = true
 
 [node name="Button" type="Button" parent="." unique_id=1314459903]
-offset_right = 51.0
-offset_bottom = 25.0
+offset_right = 220.0
+offset_bottom = 81.0
+text = "Upgrade Autofeeder
+"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

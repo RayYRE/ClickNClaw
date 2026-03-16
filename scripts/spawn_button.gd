@@ -1,8 +1,10 @@
 extends Node2D
 
+@export var num : int
+@export var cost : int
 @export var entity : Resource
 
-signal spawn_pressed(entity)
+signal spawn_pressed(entity, num, cost)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,4 +18,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	emit_signal("spawn_pressed", entity)
+	emit_signal("spawn_pressed", entity, num, cost)

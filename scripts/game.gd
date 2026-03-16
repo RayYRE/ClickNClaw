@@ -7,6 +7,8 @@ var food_count : int
 var plant_count : int
 var waste_count : int
 
+var feeder_upgrade_cost = 10
+
 var fish_scene = load("res://scenes/fish.tscn")
 var shrimp_scene = load("res://scenes/shrimp.tscn")
 var plant_scene = load("res://scenes/plant.tscn")
@@ -20,19 +22,27 @@ func _ready() -> void:
 	$Notebook.connect("spawn", _on_spawn_pressed)
 	$FeedButton.connect("feed", _feed)
 	$AutoFeeder.connect("feed", _feed)
+	$AutoFeeder.connect("upgrade_auto", _upgrade_auto)
 	fish_count = 1
 	shrimp_count = 1
 	food_count = 0
 	plant_count = 1
 	waste_count = 0
-	money_count = 0
+	money_count = 1
 	
 	food_value = 1
+	
+	var one_cost = 1
+	$feederupgrade/feeder.text = str(feeder_upgrade_cost)
+	$"1x buy/1x".text = str(one_cost * max(1, fish_count / 50))
+	$"2x buy/2x".text = str(one_cost * max(1, fish_count / 50) * 2)
+	$"3x buy2/3x".text = str(one_cost * max(1, fish_count / 50) * 5)
+	$"4x buy3/4x".text = str(one_cost * max(1, fish_count / 50) * 10)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Label.text = str(money_count) 
+	$Coin/Label.text = str(money_count) 
 	pass
 
 func _on_period_timeout() -> void:
@@ -44,25 +54,42 @@ func _on_period_timeout() -> void:
 	print("money  = ", money_count)
 
 
-func _on_spawn_pressed(entity) -> void:
-	for i in range(100):
+func _on_spawn_pressed(entity, num, cost) -> void:
+	var one_cost = 1
+	if (entity.type == "fish"):
+		cost *= max(fish_count / 50, 1)
+		$"1x buy/1x".text = str(one_cost * max(1, fish_count / 50))
+		$"2x buy/2x".text = str(one_cost * max(1, fish_count / 50) * 2)
+		$"3x buy2/3x".text = str(one_cost * max(1, fish_count / 50) * 5)
+		$"4x buy3/4x".text = str(one_cost * max(1, fish_count / 50) * 10)
+	
+	if (entity.type == "shrimp"):
+		cost *= max(shrimp_count / 50, 1)
+		$"1x buy/1x".text = str(one_cost * max(1, shrimp_count / 50))
+		$"2x buy/2x".text = str(one_cost * max(1, shrimp_count / 50) * 2)
+		$"3x buy2/3x".text = str(one_cost * max(1, shrimp_count / 50) * 5)
+		$"4x buy3/4x".text = str(one_cost * max(1, shrimp_count / 50) * 10)
 		
-		var instance
-		if (entity.type == "plant"):
-			instance = plant_scene.instantiate()
-			plant_count += 1
-		elif (entity.type == "fish"):
-			instance = fish_scene.instantiate()
-			instance.connect("ate", _food_eaten)
-			fish_count += 1
-		else:
-			instance = shrimp_scene.instantiate()
-			instance.connect("ate_waste", _waste_eaten)
-			shrimp_count += 1
+	if money_count >= cost:
+		money_count -= cost
+		for i in range(num):
+			
+			var instance
+			if (entity.type == "plant"):
+				instance = plant_scene.instantiate()
+				plant_count += 1
+			elif (entity.type == "fish"):
+				instance = fish_scene.instantiate()
+				instance.connect("ate", _food_eaten)
+				fish_count += 1
+			else:
+				instance = shrimp_scene.instantiate()
+				instance.connect("ate_waste", _waste_eaten)
+				shrimp_count += 1
 
-		instance.stats = entity
-		instance.global_position = Vector2(300, 300)
-		add_child(instance) 
+			instance.stats = entity
+			instance.global_position = Vector2(300, 300)
+			add_child(instance) 
 
 func _waste_eaten(shrimp_money, shrimp_position):
 	if waste_count > 0 :
@@ -98,5 +125,9 @@ func _feed(num):
 		food_instance.global_position = Vector2(foodspawn_x, foodspawn_y)
 		add_child(food_instance)
 
-func count_creator():	
-	pass
+func _upgrade_auto():
+	if money_count >= feeder_upgrade_cost:
+		money_count -= feeder_upgrade_cost
+		feeder_upgrade_cost *= 2
+		$feederupgrade/feeder.text = str(feeder_upgrade_cost)
+		$AutoFeeder.upgrade()
