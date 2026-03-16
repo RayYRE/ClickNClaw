@@ -21,6 +21,14 @@ const dash_duration = 3.0
 
 var money_multiplier : float
 
+@export var separation_range : float = 30
+@export var alignment_range : float = 30
+@export var cohesion_range : float = 30
+
+@export var separation_factor : float = 0.5
+@export var alignment_factor : float = 0.5
+@export var cohesion_factor : float = 0.5
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# initialise resources stats (WIP)
@@ -59,6 +67,31 @@ func _process(delta):
 	var distance = speed * delta
 
 	position += _direction * distance
+	
+	
+	var separation_velocity = Vector2.ZERO
+	var alignment_velocity = Vector2.ZERO
+	var cohesion_velocity = Vector2.ZERO
+	var numOfBoidsToAvoid = 0
+	
+	var boids = %BoidArea.get_overlapping_areas()
+	for otherBoid in boids:
+		otherBoid = otherBoid.get_parent()
+		var otherBoidPosition = otherBoid.global_position
+		var dist = self.global_position.distance_to(otherBoidPosition)
+		
+		if dist < separation_range && dist < separation_range:
+			var otherBoidToCurrBoid = self.global_position - otherBoidPosition
+			var dirToTravel = otherBoidToCurrBoid.normalized()
+			var weightedVelocity = dirToTravel / dist
+			separation_velocity += weightedVelocity
+			numOfBoidsToAvoid += 1
+			
+	if numOfBoidsToAvoid > 0 :
+		separation_velocity /= float(numOfBoidsToAvoid)
+		separation_velocity *= separation_factor
+		
+	position += separation_velocity
 
 func eat():
 	emit_signal("ate", money_multiplier, self.global_position)

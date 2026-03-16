@@ -5,20 +5,21 @@
 [ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_pgks6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nub35"]
-radius = 19.999998
+radius = 190.26297
 
 [node name="Fish" type="Sprite2D" unique_id=181024416]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_nub35")
 script = ExtResource("2_8g0i4")
 stats = ExtResource("3_pgks6")
+separation_factor = 7.93
 
-[node name="FishArea" type="Area2D" parent="." unique_id=1849240529]
+[node name="BoidArea" type="Area2D" parent="." unique_id=1849240529]
+unique_name_in_owner = true
 
-[node name="FishCollision" type="CollisionShape2D" parent="FishArea" unique_id=962915865]
+[node name="BoidDetection" type="CollisionShape2D" parent="BoidArea" unique_id=962915865]
 position = Vector2(-5.684342e-14, 0)
 shape = SubResource("CircleShape2D_nub35")
-disabled = true
 
 [node name="EatPeriod" type="Timer" parent="." unique_id=1910559296]
 autostart = true
