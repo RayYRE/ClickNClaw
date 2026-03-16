@@ -5,93 +5,54 @@ extends Sprite2D
 signal ate(money_multiplier, fish_position)
 
 # global tank size
-var x_min = 80+50
-var x_max = 845-50
-var y_min = 147+25
-var y_max = 570-25
+var x_min = 80 + 50
+var x_max = 845 - 50
+var y_min = 147 + 25
+var y_max = 570 - 25
 
-var _target:Vector2
-var _direction:Vector2
-
-var speed : int
+var speed: float = 50.0
+var velocity: Vector2
 
 var dashing = false
 var dash_timer = 0.0
 const dash_duration = 3.0
 
-var money_multiplier : float
+var money_multiplier: float
 
-@export var separation_range : float = 30
-@export var alignment_range : float = 30
-@export var cohesion_range : float = 30
-
-@export var separation_factor : float = 0.5
-@export var alignment_factor : float = 0.5
-@export var cohesion_factor : float = 0.5
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# initialise resources stats (WIP)
 	texture = stats.texture
 	money_multiplier = stats.money_multiplier
-	_pick_new_target()
-
-func _has_reached_target():
-	const MIN_DISTANCE = 4.0
-	var d = _target.distance_to(global_position)
-	return d < MIN_DISTANCE
-
-func _pick_new_target():
-	reset_speed()
-	_target.x = randf_range(x_min, x_max) 
-	_target.y = randf_range(y_min, y_max)
-	_direction = global_position.direction_to(_target)
-
-func reset_speed():
-	speed = 50
+	
+	var angle = randf_range(0.0, TAU)
+	velocity = Vector2(cos(angle), sin(angle)) * speed
 
 func _process(delta):
-	if dashing:
-		dash_timer += delta
-		if (dash_timer > dash_duration):
-			dashing = false
-		
-	if (randi() % 5 == 1 && dashing == false):
-		speed = speed*2
-		dashing = true
-		dash_timer = 0.0
-
-	if _has_reached_target():
-		_pick_new_target()
-
-	var distance = speed * delta
-
-	position += _direction * distance
+	position += velocity * delta
+	_bounce_off_walls()
 	
-	
-	var separation_velocity = Vector2.ZERO
-	var alignment_velocity = Vector2.ZERO
-	var cohesion_velocity = Vector2.ZERO
-	var numOfBoidsToAvoid = 0
-	
-	var boids = %BoidArea.get_overlapping_areas()
-	for otherBoid in boids:
-		otherBoid = otherBoid.get_parent()
-		var otherBoidPosition = otherBoid.global_position
-		var dist = self.global_position.distance_to(otherBoidPosition)
-		
-		if dist < separation_range && dist < separation_range:
-			var otherBoidToCurrBoid = self.global_position - otherBoidPosition
-			var dirToTravel = otherBoidToCurrBoid.normalized()
-			var weightedVelocity = dirToTravel / dist
-			separation_velocity += weightedVelocity
-			numOfBoidsToAvoid += 1
-			
-	if numOfBoidsToAvoid > 0 :
-		separation_velocity /= float(numOfBoidsToAvoid)
-		separation_velocity *= separation_factor
-		
-	position += separation_velocity
+func _bounce_off_walls():
+	var bounced = false
+
+	if global_position.x <= x_min:
+		global_position.x = x_min
+		velocity.x = abs(velocity.x)
+		bounced = true
+	elif global_position.x >= x_max:
+		global_position.x = x_max
+		velocity.x = -abs(velocity.x)
+		bounced = true
+
+	if global_position.y <= y_min:
+		global_position.y = y_min
+		velocity.y = abs(velocity.y)
+		bounced = true
+	elif global_position.y >= y_max:
+		global_position.y = y_max
+		velocity.y = -abs(velocity.y)
+		bounced = true
+
+	if bounced:
+		velocity = velocity.normalized() * speed
 
 func eat():
 	emit_signal("ate", money_multiplier, self.global_position)
