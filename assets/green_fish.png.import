@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c61l5xuodco4g"
-path="res://.godot/imported/shrimp.png-eb7523879f2bb16a9ff4d7961abb77f2.ctex"
+uid="uid://c53sf5qf8a3c8"
+path="res://.godot/imported/green_fish.png-bdbdf5b289d143001f71002a8e472c80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shrimp.png"
-dest_files=["res://.godot/imported/shrimp.png-eb7523879f2bb16a9ff4d7961abb77f2.ctex"]
+source_file="res://assets/green_fish.png"
+dest_files=["res://.godot/imported/green_fish.png-bdbdf5b289d143001f71002a8e472c80.ctex"]
 
 [params]
 

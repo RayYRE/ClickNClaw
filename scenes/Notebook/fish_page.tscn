@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dwnwqffwmnnum" path="res://scripts/notebook_page.gd" id="1_g0bqo"]
 [ext_resource type="PackedScene" uid="uid://ey23bli0cr84" path="res://scenes/Notebook/spawn_button.tscn" id="2_fbvxu"]
+[ext_resource type="Resource" uid="uid://cp2f0ilmwemqy" path="res://resources/fish/fish4.tres" id="3_gyp2f"]
 [ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_wn0d6"]
+[ext_resource type="Resource" uid="uid://cex1do5r6hkhs" path="res://resources/fish/fish2.tres" id="4_covr1"]
 [ext_resource type="Texture2D" uid="uid://hoq5ofb6lrm2" path="res://assets/coin2.png" id="4_fbvxu"]
+[ext_resource type="Resource" uid="uid://ps8ev67jyqai" path="res://resources/fish/fish3.tres" id="5_vm1nk"]
 
 [node name="FishPage" type="Node2D" unique_id=733486466]
 script = ExtResource("1_g0bqo")
@@ -12,19 +15,19 @@ entity_page = "fish"
 [node name="SpawnButton" parent="." unique_id=1980805055 instance=ExtResource("2_fbvxu")]
 num = 1
 cost = 1
-entity = ExtResource("3_wn0d6")
+entity = ExtResource("3_gyp2f")
 
 [node name="SpawnButton2" parent="." unique_id=122130929 instance=ExtResource("2_fbvxu")]
 position = Vector2(150, 0)
 num = 2
 cost = 2
-entity = ExtResource("3_wn0d6")
+entity = ExtResource("4_covr1")
 
 [node name="SpawnButton3" parent="." unique_id=2140277755 instance=ExtResource("2_fbvxu")]
 position = Vector2(0, 150)
 num = 5
 cost = 5
-entity = ExtResource("3_wn0d6")
+entity = ExtResource("5_vm1nk")
 
 [node name="SpawnButton4" parent="." unique_id=983328852 instance=ExtResource("2_fbvxu")]
 position = Vector2(150, 150)

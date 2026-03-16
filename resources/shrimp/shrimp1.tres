@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="shrimp_stats" format=3 uid="uid://dggpd85m7sfmx"]
 
 [ext_resource type="Script" uid="uid://177nfp36qqss" path="res://resources/templates/shrimp_stats.gd" id="1_iop1m"]
-[ext_resource type="Texture2D" uid="uid://c61l5xuodco4g" path="res://assets/shrimp.png" id="2_34gf2"]
+[ext_resource type="Texture2D" uid="uid://b5fpa415eihsy" path="res://assets/prawn.png" id="2_34gf2"]
 
 [resource]
 script = ExtResource("1_iop1m")

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://biuvn2mfdn21m"]
 
-[ext_resource type="Texture2D" uid="uid://fmmqf65tixw4" path="res://assets/fish.png" id="1_nub35"]
 [ext_resource type="Script" uid="uid://bvgx46i17o478" path="res://scripts/fish.gd" id="2_8g0i4"]
 [ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_pgks6"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8g0i4"]
+load_path = "res://.godot/imported/fish.png-d064c52f4f44361be13e5c73475d2f47.ctex"
+
 [node name="Fish" type="Sprite2D" unique_id=181024416]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_nub35")
+texture = SubResource("CompressedTexture2D_8g0i4")
 script = ExtResource("2_8g0i4")
 stats = ExtResource("3_pgks6")
 

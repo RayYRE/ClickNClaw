@@ -15,6 +15,11 @@ var plant_scene = load("res://scenes/plant.tscn")
 var food_scene = load("res://scenes/food.tscn")
 var earning_scene = load("res://scenes/earning.tscn")
 
+var fish1 = load("res://resources/fish/fish1.tres")
+var fish2 = load("res://resources/fish/fish2.tres")
+var fish3 = load("res://resources/fish/fish3.tres")
+var fish4 = load("res://resources/fish/fish4.tres")
+
 var food_value : int
 
 # Called when the node enters the scene tree for the first time.
@@ -63,6 +68,19 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 				instance = plant_scene.instantiate()
 				plant_count += 1
 			elif (entity.type == "fish"):
+				var rng = randi() % 4 
+				if rng == 0:
+					entity = fish1
+					
+				elif rng == 1:
+					entity = fish2
+					
+				elif rng == 2:
+					entity = fish3
+					
+				elif rng == 3:
+					entity = fish4
+					
 				instance = fish_scene.instantiate()
 				instance.connect("ate", _food_eaten)
 				fish_count += 1
