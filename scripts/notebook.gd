@@ -39,6 +39,7 @@ func _on_plant_button_pressed() -> void:
 func _on_achievement_button_pressed() -> void:
 	pass # Replace with function body.
 
-func update_count(fish, shrimp):
+func update_count(fish, shrimp, plant):
 	$ShrimpPage.update_count(shrimp) 
 	$FishPage.update_count(fish)
+	$PlantPage.update_count(plant)

@@ -52,6 +52,8 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 		cost = max(fish_count / 10, 1) * num
 	if (entity.type == "shrimp"):
 		cost = max(shrimp_count / 10, 1) * num
+	if (entity.type == "plant"):
+		cost = max(plant_count / 10, 1) * num
 	if money_count >= cost:
 		money_count -= cost
 		for i in range(num):
@@ -72,7 +74,7 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 			instance.stats = entity
 			instance.global_position = Vector2(300, 300)
 			add_child(instance) 
-	$Notebook.update_count(fish_count, shrimp_count)
+	$Notebook.update_count(fish_count, shrimp_count, plant_count)
 
 func _waste_eaten(shrimp_money, shrimp_position):
 	if waste_count > 0 :
