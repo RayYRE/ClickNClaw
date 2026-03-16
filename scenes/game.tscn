@@ -52,58 +52,6 @@ offset_bottom = 27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
 
-[node name="1x buy" type="Sprite2D" parent="." unique_id=622060775]
-position = Vector2(1000, 209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_vtaks")
-
-[node name="1x" type="Label" parent="1x buy" unique_id=1702630546]
-offset_left = 29.0
-offset_top = -24.0
-offset_right = 156.0
-offset_bottom = 27.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 37
-
-[node name="2x buy" type="Sprite2D" parent="." unique_id=1778549876]
-position = Vector2(1150, 209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_vtaks")
-
-[node name="2x" type="Label" parent="2x buy" unique_id=197605803]
-offset_left = 29.0
-offset_top = -24.0
-offset_right = 156.0
-offset_bottom = 27.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 37
-
-[node name="3x buy2" type="Sprite2D" parent="." unique_id=1653487857]
-position = Vector2(1000, 359)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_vtaks")
-
-[node name="3x" type="Label" parent="3x buy2" unique_id=670987974]
-offset_left = 29.0
-offset_top = -24.0
-offset_right = 156.0
-offset_bottom = 27.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 37
-
-[node name="4x buy3" type="Sprite2D" parent="." unique_id=522263476]
-position = Vector2(1150, 359)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_vtaks")
-
-[node name="4x" type="Label" parent="4x buy3" unique_id=1145894889]
-offset_left = 29.0
-offset_top = -24.0
-offset_right = 156.0
-offset_bottom = 27.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 37
-
 [node name="feederupgrade" type="Sprite2D" parent="." unique_id=138547638]
 position = Vector2(599, 690)
 scale = Vector2(0.5, 0.5)

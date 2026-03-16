@@ -134,9 +134,11 @@ flat = true
 [node name="ShrimpPage" parent="." unique_id=733486466 instance=ExtResource("1_vodji")]
 visible = false
 position = Vector2(85, 25)
+entity_page = "shrimp"
 
 [node name="FishPage" parent="." unique_id=1593858836 instance=ExtResource("2_g2fck")]
 position = Vector2(85, 25)
+entity_page = "fish"
 
 [node name="PlantPage" parent="." unique_id=217655767 instance=ExtResource("3_q8vbl")]
 position = Vector2(85, 25)

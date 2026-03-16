@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dwnwqffwmnnum" path="res://scripts/notebook_page.gd" id="1_g0bqo"]
 [ext_resource type="PackedScene" uid="uid://ey23bli0cr84" path="res://scenes/Notebook/spawn_button.tscn" id="2_fbvxu"]
 [ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_wn0d6"]
+[ext_resource type="Texture2D" uid="uid://hoq5ofb6lrm2" path="res://assets/coin2.png" id="4_fbvxu"]
 
 [node name="FishPage" type="Node2D" unique_id=733486466]
 script = ExtResource("1_g0bqo")
+entity_page = "fish"
 
 [node name="SpawnButton" parent="." unique_id=1980805055 instance=ExtResource("2_fbvxu")]
 num = 1
@@ -29,3 +31,91 @@ position = Vector2(150, 150)
 num = 10
 cost = 10
 entity = ExtResource("3_wn0d6")
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=1338145764]
+position = Vector2(15, 116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fbvxu")
+
+[node name="Label" type="Label" parent="Coin" unique_id=676543154]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 2.6333334
+anchor_bottom = 1.15
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "123"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin2" type="Sprite2D" parent="." unique_id=1788242867]
+position = Vector2(165, 116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fbvxu")
+
+[node name="Label" type="Label" parent="Coin2" unique_id=591293227]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 2.6333334
+anchor_bottom = 1.15
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "123"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin3" type="Sprite2D" parent="." unique_id=907116584]
+position = Vector2(165, 266)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fbvxu")
+
+[node name="Label" type="Label" parent="Coin3" unique_id=732050719]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 2.6333334
+anchor_bottom = 1.15
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "123"
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin4" type="Sprite2D" parent="." unique_id=1505665075]
+position = Vector2(15, 266)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fbvxu")
+
+[node name="Label" type="Label" parent="Coin4" unique_id=400344417]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 2.6333334
+anchor_bottom = 1.15
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 10.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "123"
+metadata/_edit_use_anchors_ = true

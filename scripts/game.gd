@@ -32,18 +32,11 @@ func _ready() -> void:
 	
 	food_value = 1
 	
-	var one_cost = 1
 	$feederupgrade/feeder.text = str(feeder_upgrade_cost)
-	$"1x buy/1x".text = str(one_cost * max(1, fish_count / 50))
-	$"2x buy/2x".text = str(one_cost * max(1, fish_count / 50) * 2)
-	$"3x buy2/3x".text = str(one_cost * max(1, fish_count / 50) * 5)
-	$"4x buy3/4x".text = str(one_cost * max(1, fish_count / 50) * 10)
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Coin/Label.text = str(money_count) 
-	pass
 
 func _on_period_timeout() -> void:
 	print("fish   = ", fish_count)
@@ -55,21 +48,10 @@ func _on_period_timeout() -> void:
 
 
 func _on_spawn_pressed(entity, num, cost) -> void:
-	var one_cost = 1
 	if (entity.type == "fish"):
-		cost *= max(fish_count / 50, 1)
-		$"1x buy/1x".text = str(one_cost * max(1, fish_count / 50))
-		$"2x buy/2x".text = str(one_cost * max(1, fish_count / 50) * 2)
-		$"3x buy2/3x".text = str(one_cost * max(1, fish_count / 50) * 5)
-		$"4x buy3/4x".text = str(one_cost * max(1, fish_count / 50) * 10)
-	
+		cost = max(fish_count / 10, 1) * num
 	if (entity.type == "shrimp"):
-		cost *= max(shrimp_count / 50, 1)
-		$"1x buy/1x".text = str(one_cost * max(1, shrimp_count / 50))
-		$"2x buy/2x".text = str(one_cost * max(1, shrimp_count / 50) * 2)
-		$"3x buy2/3x".text = str(one_cost * max(1, shrimp_count / 50) * 5)
-		$"4x buy3/4x".text = str(one_cost * max(1, shrimp_count / 50) * 10)
-		
+		cost = max(shrimp_count / 10, 1) * num
 	if money_count >= cost:
 		money_count -= cost
 		for i in range(num):
@@ -90,6 +72,7 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 			instance.stats = entity
 			instance.global_position = Vector2(300, 300)
 			add_child(instance) 
+	$Notebook.update_count(fish_count, shrimp_count)
 
 func _waste_eaten(shrimp_money, shrimp_position):
 	if waste_count > 0 :
