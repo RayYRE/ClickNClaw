@@ -19,6 +19,14 @@ var fish1 = load("res://resources/fish/fish1.tres")
 var fish2 = load("res://resources/fish/fish2.tres")
 var fish3 = load("res://resources/fish/fish3.tres")
 var fish4 = load("res://resources/fish/fish4.tres")
+var fish5 = load("res://resources/fish/fish5.tres")
+var fish6 = load("res://resources/fish/fish6.tres")
+
+var shrimp1 = load("res://resources/shrimp/shrimp1.tres")
+var shrimp2 = load("res://resources/shrimp/shrimp2.tres")
+var shrimp3 = load("res://resources/shrimp/shrimp3.tres")
+var shrimp4 = load("res://resources/shrimp/shrimp4.tres")
+var shrimp5 = load("res://resources/shrimp/shrimp5.tres")
 
 var food_value : int
 
@@ -68,7 +76,7 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 				instance = plant_scene.instantiate()
 				plant_count += 1
 			elif (entity.type == "fish"):
-				var rng = randi() % 4 
+				var rng = randi() % 6
 				if rng == 0:
 					entity = fish1
 					
@@ -80,11 +88,34 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 					
 				elif rng == 3:
 					entity = fish4
+				
+				elif rng == 4:
+					entity = fish5
+				
+				elif rng == 5:
+					entity = fish6
 					
 				instance = fish_scene.instantiate()
 				instance.connect("ate", _food_eaten)
 				fish_count += 1
 			else:
+				var rng = randi() % 5
+				
+				if rng == 0:
+					entity = fish1
+					
+				elif rng == 1:
+					entity = fish2
+					
+				elif rng == 2:
+					entity = fish3
+					
+				elif rng == 3:
+					entity = fish4
+				
+				elif rng == 4:
+					entity = fish5
+				
 				instance = shrimp_scene.instantiate()
 				instance.connect("ate_waste", _waste_eaten)
 				shrimp_count += 1

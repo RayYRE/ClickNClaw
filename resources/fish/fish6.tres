@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="fish_stats" format=3 uid="uid://d0l60yiugucde"]
+
+[ext_resource type="Script" uid="uid://b8dfjglmxh7w3" path="res://resources/templates/fish_stats.gd" id="1_q7fmt"]
+[ext_resource type="Texture2D" uid="uid://eirj6np4gxwm" path="res://assets/oshawot.png" id="2_q7fmt"]
+
+[resource]
+script = ExtResource("1_q7fmt")
+fishID = "1"
+texture = ExtResource("2_q7fmt")
+oxygen = -10
+waste = 10
+foodmin = -7
+foodmax = -10
+money_multiplier = 1.1
+metadata/_custom_type_script = "uid://b8dfjglmxh7w3"

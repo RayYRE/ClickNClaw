@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="shrimp_stats" format=3 uid="uid://38snwukrpm38"]
+
+[ext_resource type="Script" uid="uid://177nfp36qqss" path="res://resources/templates/shrimp_stats.gd" id="1_icr2g"]
+[ext_resource type="Texture2D" uid="uid://b2cweqhnxqau6" path="res://assets/shrimp1.png" id="2_icr2g"]
+
+[resource]
+script = ExtResource("1_icr2g")
+shrimpID = "1"
+texture = ExtResource("2_icr2g")
+oxygen = -3
+waste = 2
+foodmin = -3
+foodmax = -7
+money = 1
+metadata/_custom_type_script = "uid://177nfp36qqss"
