@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://cp2f0ilmwemqy" path="res://resources/fish/fish4.tres" id="3_gyp2f"]
 [ext_resource type="Resource" uid="uid://2p6tervsse1u" path="res://resources/fish/fish1.tres" id="3_wn0d6"]
 [ext_resource type="Resource" uid="uid://cex1do5r6hkhs" path="res://resources/fish/fish2.tres" id="4_covr1"]
-[ext_resource type="Texture2D" uid="uid://hoq5ofb6lrm2" path="res://assets/coin2.png" id="4_fbvxu"]
 [ext_resource type="Resource" uid="uid://ps8ev67jyqai" path="res://resources/fish/fish3.tres" id="5_vm1nk"]
+[ext_resource type="Texture2D" uid="uid://cl15fg7frsq52" path="res://assets/coin.png" id="7_gyp2f"]
 
 [node name="FishPage" type="Node2D" unique_id=733486466]
 script = ExtResource("1_g0bqo")
@@ -36,31 +36,30 @@ cost = 10
 entity = ExtResource("3_wn0d6")
 
 [node name="Coin" type="Sprite2D" parent="." unique_id=1338145764]
-position = Vector2(15, 116)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_fbvxu")
+position = Vector2(16, 115)
+texture = ExtResource("7_gyp2f")
 
 [node name="Label" type="Label" parent="Coin" unique_id=676543154]
 anchors_preset = -1
-anchor_left = 1.0
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 2.6333334
-anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -47.0
+offset_right = 108.66678
+offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin2" type="Sprite2D" parent="." unique_id=1788242867]
-position = Vector2(165, 116)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_fbvxu")
+position = Vector2(166, 115)
+texture = ExtResource("7_gyp2f")
 
 [node name="Label" type="Label" parent="Coin2" unique_id=591293227]
 anchors_preset = -1
@@ -68,21 +67,21 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin3" type="Sprite2D" parent="." unique_id=907116584]
-position = Vector2(165, 266)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_fbvxu")
+position = Vector2(166, 265)
+texture = ExtResource("7_gyp2f")
 
 [node name="Label" type="Label" parent="Coin3" unique_id=732050719]
 anchors_preset = -1
@@ -90,21 +89,21 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin4" type="Sprite2D" parent="." unique_id=1505665075]
-position = Vector2(15, 266)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_fbvxu")
+position = Vector2(16, 265)
+texture = ExtResource("7_gyp2f")
 
 [node name="Label" type="Label" parent="Coin4" unique_id=400344417]
 anchors_preset = -1
@@ -112,13 +111,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true

@@ -102,19 +102,19 @@ func _on_spawn_pressed(entity, num, cost) -> void:
 				var rng = randi() % 5
 				
 				if rng == 0:
-					entity = fish1
+					entity = shrimp1
 					
 				elif rng == 1:
-					entity = fish2
+					entity = shrimp2
 					
 				elif rng == 2:
-					entity = fish3
+					entity = shrimp3
 					
 				elif rng == 3:
-					entity = fish4
+					entity = shrimp4
 				
 				elif rng == 4:
-					entity = fish5
+					entity = shrimp5
 				
 				instance = shrimp_scene.instantiate()
 				instance.connect("ate_waste", _waste_eaten)

@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://dwnwqffwmnnum" path="res://scripts/notebook_page.gd" id="1_4mxph"]
 [ext_resource type="PackedScene" uid="uid://ey23bli0cr84" path="res://scenes/Notebook/spawn_button.tscn" id="2_e2tta"]
 [ext_resource type="Resource" uid="uid://dggpd85m7sfmx" path="res://resources/shrimp/shrimp1.tres" id="3_4mxph"]
-[ext_resource type="Texture2D" uid="uid://hoq5ofb6lrm2" path="res://assets/coin2.png" id="4_e2tta"]
+[ext_resource type="Texture2D" uid="uid://cl15fg7frsq52" path="res://assets/coin.png" id="4_e2tta"]
+[ext_resource type="Resource" uid="uid://38snwukrpm38" path="res://resources/shrimp/shrimp2.tres" id="4_qlc65"]
+[ext_resource type="Resource" uid="uid://26i0ge6jeon7" path="res://resources/shrimp/shrimp3.tres" id="5_gthe8"]
+[ext_resource type="Resource" uid="uid://m2xwclp54g2k" path="res://resources/shrimp/shrimp4.tres" id="6_ma2fg"]
 
 [node name="ShrimpPage" type="Node2D" unique_id=733486466]
 script = ExtResource("1_4mxph")
@@ -17,23 +20,22 @@ entity = ExtResource("3_4mxph")
 position = Vector2(150, 0)
 num = 2
 cost = 2
-entity = ExtResource("3_4mxph")
+entity = ExtResource("4_qlc65")
 
 [node name="SpawnButton3" parent="." unique_id=2140277755 instance=ExtResource("2_e2tta")]
 position = Vector2(0, 150)
 num = 5
 cost = 5
-entity = ExtResource("3_4mxph")
+entity = ExtResource("5_gthe8")
 
 [node name="SpawnButton4" parent="." unique_id=983328852 instance=ExtResource("2_e2tta")]
 position = Vector2(150, 150)
 num = 10
 cost = 10
-entity = ExtResource("3_4mxph")
+entity = ExtResource("6_ma2fg")
 
 [node name="Coin" type="Sprite2D" parent="." unique_id=1511131840]
-position = Vector2(15, 116)
-scale = Vector2(0.5, 0.5)
+position = Vector2(16, 115)
 texture = ExtResource("4_e2tta")
 
 [node name="Label" type="Label" parent="Coin" unique_id=1657724625]
@@ -42,20 +44,20 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin2" type="Sprite2D" parent="." unique_id=1574465171]
-position = Vector2(165, 116)
-scale = Vector2(0.5, 0.5)
+position = Vector2(166, 115)
 texture = ExtResource("4_e2tta")
 
 [node name="Label" type="Label" parent="Coin2" unique_id=851197619]
@@ -64,20 +66,20 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin3" type="Sprite2D" parent="." unique_id=1944452510]
-position = Vector2(165, 266)
-scale = Vector2(0.5, 0.5)
+position = Vector2(166, 265)
 texture = ExtResource("4_e2tta")
 
 [node name="Label" type="Label" parent="Coin3" unique_id=1947787056]
@@ -86,20 +88,20 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
 
 [node name="Coin4" type="Sprite2D" parent="." unique_id=896625413]
-position = Vector2(15, 266)
-scale = Vector2(0.5, 0.5)
+position = Vector2(16, 265)
 texture = ExtResource("4_e2tta")
 
 [node name="Label" type="Label" parent="Coin4" unique_id=966313429]
@@ -108,13 +110,14 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 2.6333334
 anchor_bottom = 1.15
-offset_left = -30.0
-offset_top = -60.0
-offset_right = 10.0
-offset_bottom = -37.0
+offset_left = -38.0
+offset_top = -47.0
+offset_right = 2.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
 text = "123"
 metadata/_edit_use_anchors_ = true
