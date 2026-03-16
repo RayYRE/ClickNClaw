@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c8m8gqce5h6yc"]
+
+[node name="Title" type="Control" unique_id=898493687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BreakTheGame" type="Label" parent="." unique_id=815084312]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.12103007, 0.12103007, 0.12103007, 1)
+theme_override_font_sizes/font_size = 128
+text = "Break the Game !"
